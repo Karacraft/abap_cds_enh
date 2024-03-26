@@ -1,0 +1,83 @@
+@Metadata.layer: #CORE
+// added for Object page
+@UI: {
+  headerInfo: {
+    typeName: 'Travel',
+    typeNamePlural: 'Travels',
+    title: {
+      type: #STANDARD,
+      label: 'Travel',
+      value: 'TravelID'
+    }
+  }
+}
+
+annotate view Z_I_TRAVEL_R_007 with
+{
+  // added for objec page
+  @UI.facet: [
+  {
+    id:              'Travel',
+    purpose:         #STANDARD,
+    type:            #IDENTIFICATION_REFERENCE,
+    label:           'Travel',
+    position:        10 } ,
+    { id:              'Booking',
+    purpose:         #STANDARD,
+    type:            #LINEITEM_REFERENCE,
+    label:           'Booking',
+    position:        20,
+    targetElement:   '_Booking'} ]
+
+
+
+  @UI           : {
+        lineItem      : [{position: 10, importance: #HIGH}],
+         identification:[ { position: 10, label: 'Travel' } ],
+        selectionField: [{position: 10 }]
+        }
+  TravelID;
+
+  @UI: { lineItem:     [ {  position: 20, label: 'Agency', importance: #HIGH } ],
+     identification: [ { position: 20 } ],
+     selectionField: [{position: 20  }]
+    }
+  AgencyID;
+
+
+  @UI: { lineItem:        [ {  position: 30, label: 'Customer', importance: #HIGH  } ]
+         ,identification: [ { position: 30 } ]
+         ,selectionField: [ { position: 30 }]
+        }
+  CustomerID;
+
+
+  @UI: {  lineItem: [ { position: 40 } ],
+          identification: [ { position: 40 } ],
+          selectionField: [ { position: 40 }]
+        }
+  BeginDate;
+
+
+  @UI: {  lineItem: [ { position: 50 } ],
+          identification: [ { position: 50 } ]
+         ,selectionField: [ { position: 50 }]
+        }
+  EndDate;
+
+
+  @UI: { lineItem: [ { position: 60 } ],
+          identification: [ { position: 50 } ]
+
+         }
+  TotalPrice;
+
+  @UI: { lineItem      : [{position: 60, importance: #HIGH}]
+  }
+  Memo;
+  @UI           : {
+  lineItem      : [{position: 60, importance: #HIGH}],
+  selectionField: [{position: 60 }]
+  }
+  Status;
+}
