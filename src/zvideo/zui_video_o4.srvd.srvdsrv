@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_VIDEO'
+define service ZUI_VIDEO_O4 {
+  expose ZC_VIDEO;
+}

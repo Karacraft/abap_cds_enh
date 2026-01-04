@@ -1,0 +1,54 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'ZC_VIDEO', 
+    typeNamePlural: 'ZC_VIDEOs'
+  }
+}
+annotate view ZC_VIDEO with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZC_VIDEO', 
+    position: 10 
+  } ]
+  @UI.hidden: true
+  VideoUUID;
+  
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM, 
+    label: 'Title'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Title'
+  } ]
+  Title;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM, 
+    label: 'Url'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Url'
+  } ]
+  Url;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #MEDIUM, 
+    label: 'Description'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Description'
+  } ]
+  Description;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}
